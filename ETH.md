@@ -5,7 +5,13 @@
   - [Topics](#topics)
   - [To Do](#to-do)
   - [Typical Interview Process](#typical-interview-process)
+  - [Resources](#resources)
   - [Other](#other)
+  - [Basic](#basic)
+  - [NFT](#nft)
+  - [Defi](#defi)
+  - [Security](#security)
+  - [Gas Optimization](#gas-optimization)
 
 ## Overview
 
@@ -41,6 +47,20 @@ It will link to other documentations that would detailed out these concepts.
 3. Tech interview asking questions about the test and the EVM. For example have had questions regarding CREATE2, SSTORE/SLOAD, bytes/strings, gas optimisation.
 4. Offer/no offer!
 
+## Resources
+
+1. [Concensys Basic Training](https://github.com/ConsenSys-Academy/basic-training)
+
 ## Other
 
 :scroll: [emojis cheatsheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
+
+## Basic
+
+## NFT
+
+## Defi
+
+## Security
+
+## Gas Optimization
