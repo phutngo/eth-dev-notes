@@ -12,6 +12,7 @@
   - [Defi](#defi)
   - [Security](#security)
   - [Gas Optimization](#gas-optimization)
+  - [Practical Usage Details](#practical-usage-details)
 
 ## Overview
 
@@ -64,3 +65,12 @@ It will link to other documentations that would detailed out these concepts.
 ## Security
 
 ## Gas Optimization
+
+## Practical Usage Details
+
+[Scaffold-eth](https://github.com/austintgriffith/scaffold-eth) is a great Javascript framework for Ethereum developers as it’s written using React.js and Hardhat. However, note the above warning about the difficulties of altering React.js application if you’re not comfortable!
+
+Other framework options for blockchain development you’ll see are:
+
+Truffle Boxes (Check out this Truffle + Infura + React box, for example)
+[Create-eth-app](https://github.com/paulrberg/create-eth-app), a variation of the very popular create-react-app setup command for React projects
