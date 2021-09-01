@@ -5,7 +5,6 @@
   - [Topics](#topics)
   - [To Do](#to-do)
   - [Typical Interview Process](#typical-interview-process)
-  - [Resources](#resources)
   - [Other](#other)
   - [Basic](#basic)
   - [NFT](#nft)
@@ -36,8 +35,9 @@ It will link to other documentations that would detailed out these concepts.
 
 ## To Do
 
-1. [ ] [Eth Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf)
-2. [ ] Testing
+1. [x] [Concensys Basic Training](https://github.com/ConsenSys-Academy/basic-training)
+2. [ ] [Eth Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf)
+3. [ ] Testing
 
 ## Typical Interview Process
 
@@ -47,10 +47,6 @@ It will link to other documentations that would detailed out these concepts.
 2. Take home test or walkthrough of codebase you've developed. Tests have been based around creating a basic contract (e.g. escrow, contract wallet with features) and tests to validate.
 3. Tech interview asking questions about the test and the EVM. For example have had questions regarding CREATE2, SSTORE/SLOAD, bytes/strings, gas optimisation.
 4. Offer/no offer!
-
-## Resources
-
-1. [Concensys Basic Training](https://github.com/ConsenSys-Academy/basic-training)
 
 ## Other
 

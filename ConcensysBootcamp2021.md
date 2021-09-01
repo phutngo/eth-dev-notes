@@ -12,17 +12,15 @@ Tips for This Course
 
 Technical Requirements
 
-Communication Tools
+[Keeping Up With Blockchain Developments](https://github.com/ConsenSys-Academy/Blockchain-Developer-Bootcamp/edit/main/docs/S00-intro/L6-keeping-up/index.md)
 
-Grading
+[For Advanced Students](https://github.com/ConsenSys-Academy/Blockchain-Developer-Bootcamp/edit/main/docs/S00-intro/L7-advanced-students/index.md)
 
-Let Us Know Your Best Times for Live Presentations
+What's Exciting About Blockchain:
 
-Keeping Up With Blockchain Developments
-
-For Advanced Students
-
-What's Exciting About Blockchain
+1. Digital Scarcity / Uniqueness / Value
+2. Removes middleman / power into users/distributes the power to individuals
+3. Users control their own data
 
 ## Chapter 1: Fundamentals
 
