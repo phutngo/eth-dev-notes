@@ -110,8 +110,6 @@ Scenario: Alice wants Bob to send her a 400 page legal document, and she wants t
 
 ![Different Concensus Mechanisms](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-15-21-34.png)
 
-
-
 ### Additional Material: Consensus
 
 ### External Resource: The Secret Lives of Data: Raft Algorithm
@@ -120,11 +118,35 @@ Scenario: Alice wants Bob to send her a 400 page legal document, and she wants t
 
 ### What is a Block?
 
+The block hash below the difficulty threshold? y then block is valid.
+Miners keeps changing the data (the nonce) until hash of the transactions in the bloack + the nonce is below difficulty threshhold.
+
+![Block](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-41-35.png)
+About 1 in 40 years to find a block with 1 curent mining gpu.
+
+![Validity](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-43-04.png)
+
 ### A Chain of Blocks
 
+![Chain of Blocks](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-44-29.png)
+![Chain of Blocks](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-44-51.png)
+
+Hard to change a block because of chaining. Need a lot of power to change a block as well as the rest of the blocks by finding the hashes for all of them. While the other chain is longer and keeps moving forward.
 ### Proof of Work in Ethereum
 
+![BlockContents](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-49-05.png)
+
+![Hashing Block 7](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-50-37.png)
 ### What is a Blockchain Fork?
+
+Forks can occur when using different software - that disagrees on the state of the chain.
+
+![Hard fork](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-53-03.png)
+
+![Softfork](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-54-37.png)
+new rules are a subset (stricter than old rules) leads to soft"fork". Old software accepts both old and new, but new software only accepts blocks from new software. If a certain amount / percent of miners uses new software then old rules no longer accepted.
+
+![Unintentional Fork](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-17-54-15.png)
 
 ### Other Blockchain Consensus Mechanisms
 
@@ -154,7 +176,13 @@ Scenario: Alice wants Bob to send her a 400 page legal document, and she wants t
 
 ### Chapter 1 Test (Graded)
 
+%100
+
 ### Exercise: Your Final Project Idea
+
+[instructions](https://courses.consensys.net/courses/take/blockchain-developer-bootcamp-registration-2021/surveys/26729108-exercise-your-final-project-idea)
+
+submit a Github link with a written idea for your project
 
 ## Chapter 2: Ethereum Basics
 
