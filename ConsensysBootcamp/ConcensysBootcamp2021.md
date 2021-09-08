@@ -152,18 +152,35 @@ new rules are a subset (stricter than old rules) leads to soft"fork". Old softwa
 
 ### Consensus Conclusion
 
+[Blockchain Demo](https://andersbrownworth.com/blockchain/)
+
 ### The Mental Model for Basic Blockchain Architecture
 
 ### Configurations for Different Blockchain Networks
 
+[Good Guide](https://github.com/ConsenSys-Academy/Blockchain-Developer-Bootcamp/blob/main/docs/S01-fundamentals/M3-ag-blockchain/L2-configurations/index.html)
+
 ### Public and Private Blockchains
+
+Private are permissioned
+
 
 ### When To Use a Blockchain?
 
+![When Use Blockchain](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-20-58-09.png)
+
+![When Use Blockchain](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-01-21-00-42.png)
 ### History and Development of Bitcoin
+
 
 ### What is a Crypto Wallet?
 
+Wallet generate a Private Key, then generates Public Key, Then a Hash The Addresses.
+
+QUESTION: How does an Ethereum wallet "register" the PrivateKey it generated with the network?
+Say I generated a long random string per Ethereum Private Key standards, how does that then work with the Ethereum network? Like how does the network know that that string is associated with Ethereum Accounts?
+
+The ledger is just recording transactions between addresses. You could send a transaction to any possible address, regardless if someone has the private key for it or not.
 ### Introduction to MetaMask
 
 ### How Does MetaMask Keep Your Wallet Safe?
@@ -176,7 +193,7 @@ new rules are a subset (stricter than old rules) leads to soft"fork". Old softwa
 
 ### Chapter 1 Test (Graded)
 
-%100
+100%
 
 ### Exercise: Your Final Project Idea
 
@@ -188,8 +205,17 @@ submit a Github link with a written idea for your project
 
 ### Ethereum Background and History
 
+ [Ethereum Core Developers](https://github.com/ethereum/pm) hold monthly calls, which are open to viewing by the public. There is also a group called Ethereum Cat Herders, which is dedicated to "decentralized project management to support the Ethereum network."
+
 ### Identity on Ethereum: Externally Owned Accounts (EOAs) and Smart Contracts
 
+![Account Address](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-02-23-25-21.png)
+
+![](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-02-23-26-22.png)
+
+![EOA](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-02-23-27-36.png)
+
+![Contract Account](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-02-23-27-52.png)
 ### Generating Ethereum Addresses
 
 ### Nodes
