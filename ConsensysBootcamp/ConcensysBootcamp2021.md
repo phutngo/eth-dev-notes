@@ -222,13 +222,86 @@ submit a Github link with a written idea for your project
 
 ### Transactions
 
+Eth transaction is a message sent from one account to another
+1. Transactions update state
+   1. Ether balance
+   2. Contract Storage
+2. Always signed by sender
+3. If the target of a transaction is a Contract, code executes with data as input.
+![Contract Creation](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-14-31.png)
+
+Transactions contents:
+1. Recipient Address: 0x9BC11a...
+2. Nonce: 5 (transaction count from sender)
+3. Cryptographic Variables: V, R, S - make up the sender's signature - used to determine sender's signature is valid 
+4. Value (optional): 100000 (in wei)
+5. Data  (optional): 0x8b69a0ca... - specifies contract instructions or deployment instructions
+6. Gas Limit or Start Gas - the max number of computation steps the trasaction execution is allowed to take
+7. Gas Price - the fee the sender pays per computation step
+
 ### Gas and Fees
+
+1. During EVM execution if Gas Limit is reached with steps remaining, then transaction is failed and revert.
+2. If transaction completes, then remaining gas (Gas Limit - Gas used) is returned to the sender.
+
+**Gas** - Special unit denoting how much computation work each EVM op-code uses.  "Every operation that can be performed by a transaction or contract on the Ethereum platform costs a certain number of gas" Gas does not have a financial value associated with it because "ether, like bitcoins, have a market price that can change rapidly! But the cost of computation doesn't go up or down just because the price of ether changes. So it's helpful to separate out the price of computation from the price of the ether token, so that the cost of an operation doesn't have to be changed every time the market moves." (source)
+
+**Gas Cost** - amount of gas for each EVM opcode operation implied by your transaction. The gas cost of an operation is predetermined by the Ethereum Yellow Paper, you have developer tools or a wallet to add up the cost of your transactions.
+
+**Gas Price** - The amount of ether required by network multiplied by Gas Cost
+
+
+**Gas Limit** - The maximum amount of gas that could be used by the transaction.
+
+**Transaction Fee** - The total amount of ether you spend on a transaction. After 1559, this means the base fee + the miner tip.
+
+
+Please note, unfortunately these terms are not standardized. For example, the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf) groups what we're calling "Gas Cost" under a section titled "Appendix G: Fee Schedule." We're proposing the above terminology to help you separate between the computation cost and limits and the price of including your transaction in a block.
 
 ### Ethereum Structure
 
+[How does Ethereum work, anyway?](https://preethikasireddy.medium.com/how-does-ethereum-work-anyway-22d1df506369)
+
+EVM is 256 bit Turing complete
+![EVM Slow](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-34-08.png)
+
+![Bytecode](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-34-48.png)
+
+![Bytecode stored in Contract accounts](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-35-28.png)
+
+![Compile](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-36-23.png)
+
+![Network process](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-37-21.png)
+
+![When Block Found](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-38-58.png)
+
+![Uncle Blocks](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-10-40-35.png)
+Ethereum actually provides block reward for uncle blocks to dis-incentivize miners being co-located - centralized.
+
+
+
 ### Sending Transactions
 
+We're created an interactive Observable notebook to learn more about [Externally Owned Accounts and Ethereum Transactions](https://observablehq.com/@consensys-academy/externally-owned-accounts-and-ethereum-transactions) into the network.
+
 ### Merkle Trees
+
+[Merkling in Ethereum by Vitalik Buterin](https://blog.ethereum.org/2015/11/15/merkling-in-ethereum/)
+
+"So what is the benefit of this strange kind of hashing algorithm? Why not just concatenate all the chunks together into a single big chunk and use a regular hashing algorithm on that? The answer is that it allows for a neat mechanism known as **Merkle proofs**:"
+
+A Merkle proof consists of:
+1. a chunk, 
+2. the root hash of the tree, 
+3. and the “branch” consisting of all of the hashes going up along the path from the chunk to the root.
+
+Someone reading the proof can verify that the hashing, at least for that branch, is consistent going all the way up the tree, and therefore that the given chunk actually is at that position in the tree.
+
+The application is simple: suppose that there is a large database, and that the entire contents of the database are stored in a Merkle tree where the root of the Merkle tree is publicly known and trusted (eg. it was digitally signed by enough trusted parties, or there is a lot of proof of work on it). Then, a user who wants to do a key-value lookup on the database (eg. “tell me the object in position 85273”) can ask for a Merkle proof, and upon receiving the proof verify that it is correct, and therefore that the value received actually is at position 85273 in the database with that particular root. 
+
+It allows a mechanism for authenticating a small amount of data, like a hash, to be extended to also authenticate large databases of potentially unbounded size.
+
+![Merkle proof bitcoin](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-14-08-41.png)
 
 ### Playing with Merkle Trees
 
