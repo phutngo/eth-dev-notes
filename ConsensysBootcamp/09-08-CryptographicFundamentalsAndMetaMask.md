@@ -48,3 +48,7 @@ Todo
     account are the pages
 
 https://faucet.ropsten.be/
+
+## Final project idea
+
+consider using scaffold.eth but make sure follow the final project requirements to a t
