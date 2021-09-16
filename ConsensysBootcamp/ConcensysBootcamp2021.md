@@ -303,15 +303,46 @@ It allows a mechanism for authenticating a small amount of data, like a hash, to
 
 ![Merkle proof bitcoin](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-14-08-41.png)
 
+Efficiently verify contents (logn for both space and time/computation)  (n number of leaves)
+   Concisely prove that data is in a set only requiring a limited subset of the tree
+
+![merkle tree](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-14-22-01.png)
+
+![Merkle proofs](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-14-22-31.png)
+
+We want to confirm that H4 is in the tree, we need the hashses of the branches that has gray and yellow.
+If they all math then good.
+
+![Patricia Tree](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-10-14-24-15.png)
+
+[Merkle Trees Observable Notebook](https://observablehq.com/d/07452fd761029fc8)
+
 ### Playing with Merkle Trees
 
 ### EIP-1559
 
+"EIP-1559 is a backwards compatible upgrade. You'll remember from the section on distributed consensus, this means that pre-EIP-1559 transaction structure is still supported. However, post-EIP-1559, a transaction price is calculated using the following equation:"
+
+````js
+transaction fee = baseFee + min(maxFee - baseFee, priorityFee)
+````
+
+- _baseFee_ - A fee that floats based on the network congestion and the most recent value can be fetched via a new JSON RPC call eth_feeHistory
+- _priorityFee_ - (also called a tip) A fee to entice a block producer to include the transaction.
+- _maxFee_ - The highest network fee the user is willing to pay.
+
+--------------- 
+- [What is EIP-1559? (ConsenSys)](https://consensys.net/blog/quorum/what-is-eip-1559-how-will-it-change-ethereum/) A great introductory explainer article we used for much of the course material.
+- [What is EIP-1559? (MetaMask)](https://metamask.io/1559) Another introductory article, this time from the perspective of a MetaMask user
+- [Video: How To Set Transaction Priority in MetaMask](https://www.youtube.com/watch?v=gsfJywNxpi4) Great video walking through the ways in which MetaMask is adjusting to EIP-1559.
+- [Interactive: Ultrasound Money](https://ultrasound.money/) The website provides realtime updates on how much ether has been burned as part of EIP-1559
 ### What is an Ethereum Client? Running Hyperledger Besu -
+
 
 ### Workshop: Working with Hyperledger Besu
 
 ## Chapter 3: Smart Contracts
+
 
 ### Smart Contracts: What Are They? How Do They Fit In Our Mental Model?
 
@@ -327,9 +358,96 @@ It allows a mechanism for authenticating a small amount of data, like a hash, to
 
 ### Solidity Data Types and Variables
 
-### Solidity Functions
+Statically typed
+Compiled
+Elementary (value) types:
+1. Boolean
+   1. bool <var name>
+   2. !, &&, ||, ==, !=
+   3. bool **public** <var name> will auto make a **getter function** to retrieve the var value
+   4. **All types initialize to 0, unassigned booleans default to false**
+2. Integer
+   1. int, uint
+   2. auto init to 0
+   3. uint is same as uint256
+   4. suffix must be multiples of 8, eg. uint8, uint16, uint24
+3. Address
+   1. A 20 byte value with member functions. Functions can be calle don any address
+      1. Balance
+      2. Transfer
+      3. Send - low level of transfer, don't use.
+      4. Call - call another contract. It returns true if the function terminated successfully, and false if an exception was encountered.
+         1. Use .gas() or .value() modifiers to specify them
+      5. Callcode - use delegatecall() instead. this will be removed in future versions
+      6. Delegatecall - delegates a function call to the speciofied address maintaining all aspects of the calling address (storage, balance, etc.)
+   2. usage: address.balance to get the balance. etc.
+4. Byte arrays 
+   1. fixed size byte arrays
+   2. Defined with byte followed by a number between 1 and 32 
+      1. byte[4] <var name>
+      2. member .length returns the length of the byte array
+      3. much cheaper than dynamic arrays
+   3. Dynamic size byte arrays
+      1. defined with bytes, equiv to byte[]
+      2. not actually a value type
+5. Enums
+   1. User defined type
 
-### Solidity Storage and Memory
+![Enums](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-20-29.png)
+
+Complex (reference) types
+1. Arrays
+   1. ![](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-23-09.png)
+   2. ![](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-23-33.png)
+2. Structs
+   1. ![struct](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-24-18.png)
+
+-Mappings
+![mapping](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-24-46.png)
+
+### Solidity Functions
+![function types](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-21-32.png)
+
+![ft2](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-21-58.png)### Solidity Storage and Memory
+
+Global variables always available in the contract
+![Global Variables](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-26-56.png)
+
+difference between **msg.sender** and **tx.origin**?
+
+-----
+![function declaration](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-30-13.png)
+
+![parameter](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-30-41.png)
+
+![function access](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-31-37.png)
+
+note that for external functions - the contract can use the keyword **this** to call that function from within the contract.
+
+![function returns](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-34-09.png)
+
+
+![constant view function](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-35-21.png)
+![state modifications](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-35-50.png)
+
+![Pure](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-40-01.png)
+
+![Payable](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-41-24.png)
+can receive and handle ether
+Can it modify send either without receiving? Still need the modifier payable?
+
+![Exceptions](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-43-40.png)
+
+![Function modifiers](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-44-34.png)
+the _ represent where the function would be, so if put the underscore at end of the modifier declaration, then the modifier will run first, then the rest of the function.
+
+![fallback](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-49-06.png)
+
+after solidity 0.6.0 fallback() / receive() must be exxplicitly declared/called? **what if I have an unnamed function, will this be allowed?**
+
+![overloading](screenshotsForConcensysBootcamp2021/ConcensysBootcamp2021-2021-09-16-15-51-32.png)
+
+Child functions that have same signature as parent (inherited) functions will override parent functions.
 
 ### Solidity Contract Structure
 
